@@ -6,8 +6,10 @@ body {
 }
 
 :root {
-    --Boxfont: 1.7rem;
     --pcolor: Darkorange;
+    --headfont: 3.5rem;
+    --subheadfont: 2.5rem;
+    --parafont: 1.5rem;
 }
 
 nav {
@@ -22,7 +24,7 @@ nav {
 }
 
 nav h1 {
-    font-size: 3.56rem;
+    font-size: var(--headfont);
     width: fit-content;
     padding: 0;
     margin: 0;
@@ -30,7 +32,8 @@ nav h1 {
 
 .page {
     display: grid;
-    grid-gap: 1rem;
+    grid-row-gap: 3rem;
+    grid-column-gap: 2rem;
     /* grid-template-columns: 1fr 1fr 1fr; */
     grid-template-areas: 'box1 box1 box1' ' box2 box3 box3' 'box4 box4 box5' 'box6 box6 box7';
     max-width: 1500px;
@@ -58,12 +61,12 @@ nav h1 {
 }
 
 .main h2 {
-    font-size: 3.5rem;
+    font-size: var(--headfont);
     width: fit-content;
 }
 
 .main h3 {
-    font-size: 1.5rem;
+    font-size: var(--parafont);
 }
 
 .main a {
@@ -76,7 +79,7 @@ nav h1 {
     padding: 8px 60px;
     margin: 26px 0;
     border-radius: 1px;
-    font-size: 1.5rem;
+    font-size: var(--parafont);
     font-weight: bolder;
 }
 
@@ -98,24 +101,26 @@ nav h1 {
 .box3 {
     grid-area: box3;
     background-color: var(--pcolor);
-    color: white;
     display: flex;
+    color: white;
     flex-direction: column;
     align-items: center;
     height: 350px;
+    margin: auto;
     border: none;
     padding: 0.5rem 1.2rem;
     justify-content: space-around;
+   
 }
 
 .box3 h2 {
-    font-size: 4rem;
+    font-size: var(--headfont);
     width: fit-content;
     margin: 0;
 }
 
 .box3 p {
-    font-size: var(--Boxfont);
+    font-size: var(--parafont);
     text-align: center;
 }
 
@@ -143,7 +148,7 @@ nav h1 {
 
 .box5 span {
     display: block;
-    font-size: 3.4rem;
+    font-size: var(--headfont);
     font-weight: bolder;
 }
 
@@ -155,20 +160,43 @@ nav h1 {
     grid-area: box7;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     .page {
-        grid-template-areas: "box1" "box2" "box3" "box4" 'box5' "box6" "box7";
+        grid-template-areas: "box1" "box2" "box3" "box5" 'box4' "box6" "box7";
         grid-gap: 1.5rem;
         width: 98vw;
+    }
+    :root{
+        --headfont: 3.2rem;
+        --subheadfont: 2.2rem;
+        --parafont: 1.2rem;
+    }
+    .main h2 {
+        font-size: 3.1rem;
     }
     body {
         margin: 0;
     }
     .box2 {
         margin: auto;
+        width: 300px;
+        height: 300px;
     }
+    
     .box3 {
-        height: 500px;
+        height: 350px;
         text-align: justify;
+    }
+}
+@media only screen and (max-width: 400px){
+    .box2{
+        width: 200px;
+        height: 200px;
+    }
+    .box5 img{
+        width: 45%;
+    }
+    .main{
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("./background2.jpg") no-repeat center center/cover;
     }
 }
