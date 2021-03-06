@@ -163,17 +163,15 @@ nav h1 {
 @media only screen and (max-width: 800px) {
     .page {
         grid-template-areas: "box1" "box2" "box3" "box5" 'box4' "box6" "box7";
-        grid-gap: 1.5rem;
-        width: 98vw;
+        /* grid-gap: 1.5rem; */
+        /* width: 98vw; */
     }
     :root{
         --headfont: 3.2rem;
         --subheadfont: 2.2rem;
         --parafont: 1.2rem;
     }
-    .main h2 {
-        font-size: 3.1rem;
-    }
+  
     body {
         margin: 0;
     }
@@ -189,6 +187,11 @@ nav h1 {
     }
 }
 @media only screen and (max-width: 400px){
+    :root{
+        --headfont: 3rem;
+        --subheadfont: 2rem;
+        --parafont: 1.2rem;
+    }
     .box2{
         width: 200px;
         height: 200px;
